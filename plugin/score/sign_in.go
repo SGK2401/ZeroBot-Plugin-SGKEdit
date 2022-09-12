@@ -32,10 +32,10 @@ const (
 	ua            = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
 	signinMax     = 1
 	// SCOREMAX 分数上限定为120
-	SCOREMAX = 120
+	SCOREMAX = 2401223
 )
 
-var levelArray = [...]int{0, 1, 2, 5, 10, 20, 35, 55, 75, 100, 120}
+var levelArray = [...]int{0, 1, 2, 6, 12, 24, 48, 72, 96, 120, 240, 2401223}
 
 func init() {
 	engine := control.Register("score", &ctrl.Options[*zero.Ctx]{
@@ -64,7 +64,7 @@ func init() {
 			picFile := cachePath + strconv.FormatInt(uid, 10) + today + ".png"
 
 			if si.Count >= signinMax && siUpdateTimeStr == today {
-				ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("今天你已经签到过了！"))
+				ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("你今天已经签到过了!"))
 				if file.IsExist(drawedFile) {
 					ctx.SendChain(message.Image("file:///" + file.BOTPATH + "/" + drawedFile))
 				}
@@ -119,16 +119,16 @@ func init() {
 				return
 			}
 			add := 1
-			canvas.DrawString(nickName+fmt.Sprintf(" 小熊饼干+%d", add), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.3)
+			canvas.DrawString(nickName+fmt.Sprintf(" 理智+%d", add), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.3)
 			score := sdb.GetScoreByUID(uid).Score
 			score += add
 			if score > SCOREMAX {
 				score = SCOREMAX
-				ctx.SendChain(message.At(uid), message.Text("你获得的小熊饼干已经达到上限"))
+				ctx.SendChain(message.At(uid), message.Text("你已经是巴别塔的恶灵了(?"))
 			}
 			_ = sdb.InsertOrUpdateScoreByUID(uid, score)
 			level := getLevel(score)
-			canvas.DrawString("当前小熊饼干:"+strconv.FormatInt(int64(score), 10), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.4)
+			canvas.DrawString("当前理智:"+strconv.FormatInt(int64(score), 10), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.4)
 			canvas.DrawString("LEVEL:"+strconv.FormatInt(int64(level), 10), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.5)
 			canvas.DrawRectangle(float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.55, float64(back.Bounds().Size().X)*0.6, float64(back.Bounds().Size().Y)*0.1)
 			canvas.SetRGB255(150, 150, 150)
@@ -172,7 +172,7 @@ func init() {
 			}
 			picFile := cachePath + uidStr + time.Now().Format("20060102") + ".png"
 			if file.IsNotExist(picFile) {
-				ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("请先签到！"))
+				ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("请先签到!"))
 				return
 			}
 			ctx.SendChain(message.Image("file:///" + file.BOTPATH + "/" + picFile))
@@ -221,7 +221,7 @@ func init() {
 			}
 			err = chart.BarChart{
 				Font:  font,
-				Title: "饼干排名",
+				Title: "理智排名",
 				Background: chart.Style{
 					Padding: chart.Box{
 						Top: 40,
