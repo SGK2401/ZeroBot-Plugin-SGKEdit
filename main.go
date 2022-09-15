@@ -124,7 +124,7 @@ import (
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/wordle"        // 猜单词
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/ymgal"         // 月幕galgame
 
-	//额外自制插件
+	// 额外自制插件 @SGK2401
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/msgid"  //消息ID获取
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/recall" //撤回
 
