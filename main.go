@@ -124,11 +124,13 @@ import (
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/wordle"        // 猜单词
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/ymgal"         // 月幕galgame
 
-	// 额外自制插件 @SGK2401
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/msgid"  //消息ID获取
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/recall" //撤回
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/wtf" // 鬼东西
 
-	// _ "github.com/FloatTech/ZeroBot-Plugin/plugin/wtf"            // 鬼东西
+	// 额外自制插件 @SGK2401
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/keyword" //关键词回复(区分于Thesaurus)
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/msgid"   //消息ID获取
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/recall"  //撤回
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/xp"      // 丢给你一个XP
 
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
