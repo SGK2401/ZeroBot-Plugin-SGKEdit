@@ -15,7 +15,7 @@ type dict = map[string]*[]string
 
 func init() {
 	engine := control.Register("keyword", &ctrl.Options[*zero.Ctx]{
-		Help: "关键词匹配回复随机内容, 代码参考Thesaurus插件" +
+		Help: "关键词匹配回复随机内容, 代码参考(照搬)Thesaurus插件\n" +
 			"- KEYWORDS",
 		DisableOnDefault: true,
 		PublicDataFolder: "Keyword",
@@ -35,7 +35,7 @@ func init() {
 			keylist = append(keylist, k)
 		}
 
-		logrus.Infoln("[Keyword]Loaded ", len(keylist), " keyword(s)")
+		logrus.Infoln("[Keyword]Loaded ", len(keylist), " content(s)")
 
 		engine.OnFullMatchGroup(keylist, zero.OnlyToMe).SetBlock(true).Handle(func(ctx *zero.Ctx) {
 			key := ctx.MessageString()
@@ -43,8 +43,8 @@ func init() {
 			text := val[rand.Intn(len(val))]
 			ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text(text))
 		})
-		engine.OnFullMatch("KEY").SetBlock(true).Handle(func(ctx *zero.Ctx) {
-			ctx.SendChain(message.Text(""))
+		engine.OnFullMatch("KEYWORDS").SetBlock(true).Handle(func(ctx *zero.Ctx) {
+			ctx.SendChain(message.Text(keylist))
 		})
 	}()
 }
