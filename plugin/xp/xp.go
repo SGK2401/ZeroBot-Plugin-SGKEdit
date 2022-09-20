@@ -17,7 +17,7 @@ type dict = map[string]*[]string
 func init() {
 	engine := control.Register("xp", &ctrl.Options[*zero.Ctx]{
 		Help: "随机丢给你一个XP, 代码参考(照搬)Thesaurus插件\n" +
-			"- XP xxx\n- XPLIST",
+			"- XP[xxx]\n- XPLIST",
 		DisableOnDefault: true,
 		PublicDataFolder: "XP",
 	})
