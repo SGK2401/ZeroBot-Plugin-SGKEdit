@@ -35,7 +35,7 @@ func init() {
 	engine := control.Register(
 		"jikipedia",
 		&ctrl.Options[*zero.Ctx]{
-			DisableOnDefault: false,
+			DisableOnDefault: true,
 			Help:             "小鸡词典\n -[查梗|小鸡词典][梗]",
 		},
 	)

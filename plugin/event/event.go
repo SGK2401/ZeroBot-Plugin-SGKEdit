@@ -16,7 +16,7 @@ import (
 
 func init() {
 	engine := control.Register("event", &ctrl.Options[*zero.Ctx]{
-		DisableOnDefault: false,
+		DisableOnDefault: true,
 		Help: "好友申请以及群聊邀请事件处理，默认发送给主人列表第一位\n" +
 			"- [开启|关闭]自动同意[申请|邀请|主人]\n" +
 			"- [同意|拒绝][申请|邀请][flag]\n" +
