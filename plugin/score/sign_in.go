@@ -129,7 +129,7 @@ func init() {
 			_ = sdb.InsertOrUpdateScoreByUID(uid, score)
 			level := getLevel(score)
 			canvas.DrawString("当前理智:"+strconv.FormatInt(int64(score), 10), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.4)
-			canvas.DrawString("LEVEL:"+strconv.FormatInt(int64(level), 10), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.5)
+			canvas.DrawString("Sanity:"+strconv.FormatInt(int64(level), 10), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.5)
 			canvas.DrawRectangle(float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.55, float64(back.Bounds().Size().X)*0.6, float64(back.Bounds().Size().Y)*0.1)
 			canvas.SetRGB255(150, 150, 150)
 			canvas.Fill()
