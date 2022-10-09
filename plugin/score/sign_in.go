@@ -3,6 +3,7 @@ package score
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strconv"
 	"time"
@@ -26,7 +27,7 @@ import (
 const (
 	backgroundURL = "https://img.moehu.org/pic.php?id=pc"
 	signinMax     = 1
-	// SCOREMAX 分数上限定为120
+	// SCOREMAX 分数上限定为2401223
 	SCOREMAX = 2401223
 )
 
@@ -115,7 +116,7 @@ func init() {
 				ctx.SendChain(message.Text("ERROR: ", err))
 				return
 			}
-			add := 1
+			add := (rand.Intn(24) + 1) // 随机积分(1~24)
 			canvas.DrawString(nickName+fmt.Sprintf(" 理智+%d", add), float64(back.Bounds().Size().X)*0.1, float64(back.Bounds().Size().Y)*1.3)
 			score := sdb.GetScoreByUID(uid).Score
 			score += add
