@@ -3,8 +3,8 @@
   <img src=".github/糕糕.jpg" alt="看板娘" width = "400">
   </a><br>
 
-  <h1>ZeroBot-Plugin</h1>
-  ZeroBot-Plugin 是 ZeroBot 的 实用插件合集<br><strong><em>此版本为年糕的魔改版本</strong></em><br>
+  <h1>ZeroBot-Plugin-SGKEdit</h1>
+  ZeroBot-Plugin-SGKEdit 是 ZeroBot 的 实用插件合集<br><strong><em>此版本为年糕的魔改版本</strong></em><br>
 
   [![miraigo](https://img.shields.io/badge/OneBot-MiraiGo-green.svg?style=social&logo=appveyor)](https://github.com/Mrs4s/MiraiGo)
   [![oicq](https://img.shields.io/badge/OneBot-OICQ-green.svg?style=social&logo=appveyor)](https://github.com/takayama-lily/oicq)
@@ -1217,5 +1217,6 @@ GOOS=linux GOARCH=mips GOMIPS=softfloat CGO_ENABLED=0 go build -ldflags "-s -w" 
 ## 特别感谢
 
 - [ZeroBot](https://github.com/wdvxdr1123/ZeroBot)
-- [ATRI](https://github.com/Kyomotoi/ATRI)
+- [ATRI](https://github.com/Kyomotoi/ATRI)  
+- [ZeroBot-Plugin](https://github.com/FloatTech/ZeroBot-Plugin)作为源项目
 - 各路群友(?)
