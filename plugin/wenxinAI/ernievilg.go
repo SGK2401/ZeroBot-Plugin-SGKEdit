@@ -57,7 +57,7 @@ var (
 
 func init() { // 插件主体
 	engine := control.Register(serviceName, &ctrl.Options[*zero.Ctx]{
-		DisableOnDefault: false,
+		DisableOnDefault: true,
 		Help: "AI画图\n" +
 			"基于百度文心的免费AI画图插件,\n因为是免费的,图片质量你懂的。\n" +
 			"key申请链接：https://wenxin.baidu.com/moduleApi/key\n" +

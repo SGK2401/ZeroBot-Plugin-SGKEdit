@@ -13,7 +13,7 @@ import (
 
 func init() {
 	en := control.Register("base64gua", &ctrl.Options[*zero.Ctx]{
-		DisableOnDefault: false,
+		DisableOnDefault: true,
 		Help: "base64gua加解密\n" +
 			"- 六十四卦加密xxx\n- 六十四卦解密xxx\n- 六十四卦用yyy加密xxx\n- 六十四卦用yyy解密xxx",
 	})

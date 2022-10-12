@@ -42,7 +42,7 @@ var (
 
 func init() { // 插件主体
 	engine := control.Register(servicename, &ctrl.Options[*zero.Ctx]{
-		DisableOnDefault: false,
+		DisableOnDefault: true,
 		Help: "猜歌插件（该插件依赖ffmpeg）\n" +
 			"由于不可抗因素无法获取网易云歌单内容,\n插件改为本地猜歌了，但保留了下歌功能\n" +
 			"当前的API是独角兽的网易云API，只能从歌单随机抽取歌曲信息\n(也不知道这个API能活到什么时候x)\n" +
